@@ -1,0 +1,54 @@
+{
+  "name": "@altmind-digital/videoask-custom-provider",
+  "version": "1.0.0",
+  "description": "Custom provider to embed VideoAsk to react application",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "preversion": "npm run build",
+    "version": "npm publish --access=public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altMindInc/videoask-custom-provider.git"
+  },
+  "keywords": [
+    "react",
+    "videoask",
+    "videoask",
+    "custom",
+    "provider",
+    "react",
+    "videoask"
+  ],
+  "author": "altMind Inc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/altMindInc/videoask-custom-provider/issues"
+  },
+  "homepage": "https://github.com/altMindInc/videoask-custom-provider#readme",
+  "devDependencies": {
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "rimraf": "^5.0.5"
+  }
+}
