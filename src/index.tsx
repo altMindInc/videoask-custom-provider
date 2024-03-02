@@ -43,7 +43,7 @@ declare global {
   }
 }
 
-const VideoAskContext = createContext<{
+export const VideoAskContext = createContext<{
   showWidget: () => void;
   hideWidget: () => void;
 }>({

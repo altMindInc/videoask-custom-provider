@@ -17,17 +17,45 @@ yarn add @altmind-digital/videoask-custom-provider
 To use the VideoAsk React Custom Provider, simply import it into your React component and call it:
 
 ```bash
+  const videoAskConfig = {
+    kind: 'widget',
+    // eslint-disable-next-line max-len
+    url: `https://www.videoask.com/[YOURVIDEOID]?YOURCUSTOMVARIABLES`,
+    options: {
+      widgetType: 'VideoThumbnailExtraLarge',
+      text: '',
+      backgroundColor: '#7E3DD4',
+      position: 'bottom-right',
+      dismissible: true,
+      videoPosition: 'center center',
+    },
+  };
 
+  <VideoAskContextProvider
+    config={videoAskConfig}
+    callbacks={{ onCloseWidget, onMessage }}
+  >
+    <ShowWidget />
+  </VideoAskContextProvider>
+```
+
+```bash
+import { useContext, useEffect } from 'react';
+import { VideoAskContext } from '@altmind-digital/videoask-custom-provider';
+
+const ShowWidget = () => {
+  const { showWidget } = useContext(VideoAskContext);
+  useEffect(() => showWidget(), [showWidget]);
+  return null;
+};
+
+export default ShowWidget;
 ```
 
 ## Features
 - Easy Integration: Quickly embed VideoAsk elements into your React components.
 - Event Handling: Handle events such as form submissions and button clicks from your VideoAsk video.
 - Customization: Customize the appearance and behavior of your VideoAsk video directly from your React components.
-
-
-## Example
-You can find a complete example of using the VideoAsk React Custom Hook in the example directory.
 
 ## Documentation
 For detailed documentation on the usage and available options of the VideoAsk React Custom Hook, refer to the official [documentation](https://www.videoask.com/help/embed/360059030911-embed-a-videoask-widget).
