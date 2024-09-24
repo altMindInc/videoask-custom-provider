@@ -16,7 +16,7 @@ type VideoAskConfig = {
     backgroundColor?: string;
     position: string;
     dismissible: boolean;
-    videoPositon: string;
+    videoPosition: string;
   };
 };
 
