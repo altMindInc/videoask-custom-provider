@@ -1,6 +1,6 @@
 {
   "name": "@altmind-digital/videoask-custom-provider",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Custom provider to embed VideoAsk to react application",
   "main": "dist/index.js",
   "files": [

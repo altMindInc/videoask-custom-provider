@@ -11,16 +11,12 @@ type VideoAskConfig = {
   kind: string;
   url: string;
   options: {
-    widgetType:
-      | "VideoThumbnailExtraLarge"
-      | "VideoThumbnailWindow"
-      | "VideoThumbnailWindowTall"
-      | "VideoThumbnailSmall";
+    widgetType: string;
     text?: string;
     backgroundColor?: string;
-    position?: "bottom-right" | "top-right" | "top-left" | "bottom-left";
+    position: string;
     dismissible: boolean;
-    videoPositon?: string;
+    videoPositon: string;
   };
 };
 
