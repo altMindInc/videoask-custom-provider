@@ -5,20 +5,20 @@ import React, {
   useEffect,
   useRef,
   useState,
-} from 'react';
+} from "react";
 
 type VideoAskConfig = {
-  kind: 'widget';
+  kind: string;
   url: string;
   options: {
     widgetType:
-      | 'VideoThumbnailWindow'
-      | 'VideoThumbnailWindowTall'
-      | 'VideoThumbnailExtraLarge'
-      | 'VideoThumbnailJumbo';
-    text: string;
+      | "VideoThumbnailExtraLarge"
+      | "VideoThumbnailWindow"
+      | "VideoThumbnailWindowTall"
+      | "VideoThumbnailSmall";
+    text?: string;
     backgroundColor?: string;
-    position?: 'bottom-left' | 'top-right' | 'top-left' | 'bottom-left';
+    position?: "bottom-right" | "top-right" | "top-left" | "bottom-left";
     dismissible: boolean;
     videoPositon?: string;
   };
@@ -62,8 +62,8 @@ const VideoAskProvider: React.FC<{
   widgetRef.current = widget;
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.videoask.com/embed/embed.js';
+    const script = document.createElement("script");
+    script.src = "https://www.videoask.com/embed/embed.js";
     script.async = true;
     document.body.appendChild(script);
 
@@ -88,7 +88,7 @@ const VideoAskProvider: React.FC<{
               callbacks?.onCloseModal?.(removeWidget);
             },
           })
-          .then(el => setWidget(el));
+          .then((el) => setWidget(el));
       }
     }, delay || 3000);
   }, [callbacks, config, removeWidget, widget]);

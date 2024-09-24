@@ -1,12 +1,12 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 type VideoAskConfig = {
-    kind: 'widget';
+    kind: string;
     url: string;
     options: {
-        widgetType: 'VideoThumbnailWindow' | 'VideoThumbnailWindowTall' | 'VideoThumbnailExtraLarge' | 'VideoThumbnailJumbo';
-        text: string;
+        widgetType: "VideoThumbnailExtraLarge" | "VideoThumbnailWindow" | "VideoThumbnailWindowTall" | "VideoThumbnailSmall";
+        text?: string;
         backgroundColor?: string;
-        position?: 'bottom-left' | 'top-right' | 'top-left' | 'bottom-left';
+        position?: "bottom-right" | "top-right" | "top-left" | "bottom-left";
         dismissible: boolean;
         videoPositon?: string;
     };

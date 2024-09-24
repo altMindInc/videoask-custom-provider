@@ -34,8 +34,8 @@ const VideoAskProvider = ({ children, config, callbacks, delay }) => {
     const widgetRef = (0, react_1.useRef)();
     widgetRef.current = widget;
     (0, react_1.useEffect)(() => {
-        const script = document.createElement('script');
-        script.src = 'https://www.videoask.com/embed/embed.js';
+        const script = document.createElement("script");
+        script.src = "https://www.videoask.com/embed/embed.js";
         script.async = true;
         document.body.appendChild(script);
         return () => {
@@ -55,7 +55,7 @@ const VideoAskProvider = ({ children, config, callbacks, delay }) => {
                 (_a = window.videoask) === null || _a === void 0 ? void 0 : _a.loadEmbed(config, Object.assign(Object.assign({}, callbacks), { onCloseModal: () => {
                         var _a;
                         (_a = callbacks === null || callbacks === void 0 ? void 0 : callbacks.onCloseModal) === null || _a === void 0 ? void 0 : _a.call(callbacks, removeWidget);
-                    } })).then(el => setWidget(el));
+                    } })).then((el) => setWidget(el));
             }
         }, delay || 3000);
     }, [callbacks, config, removeWidget, widget]);
